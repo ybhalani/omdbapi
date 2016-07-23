@@ -23,9 +23,11 @@
                                     $http({
                                         method: $scope.method,
                                         url: 'https://www.omdbapi.com/?i=' + obj.imdbID + '&plot=full&r=json&tomatoes=true'
+
                                     }).
                                     then(function(response) {
                                         obj.details = response.data;
+                                        //console.log(obj.details);
                                     });
                                 });
                                 $scope.movieResults = theSrchResults;
@@ -49,6 +51,7 @@
                 };
             }
         ])
+
         .directive('movieSrchResults', function() {
             return {
                 templateUrl: 'movieResults.html'
